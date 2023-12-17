@@ -1,6 +1,6 @@
 # My web portfolio
 ***
-This is my portfolio web page: [https://artyom-it.net/](https://artyom-it.net/).
+This is my portfolio web page: [Click!](https://artyom-it.net/).
 It includes:
 - Information about me
 - My last projects
