@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artyom's CV</title>
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="stylesheet" href="contact_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@200;400;600&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <script src="https://kit.fontawesome.com/37f6db0351.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="logo">
+            <a href="index.html"><img src="img/Logo_Art_color.png"></a>
+        </div>
+        <div class="div-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About me</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://github.com/codehashira" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href=mailto:"smr.artm@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="img/Smirnov_CV.pdf" download><i class="fa-solid fa-file-pdf"></i></a>
+            <i class="fa-solid fa-x"></i>
+                <input id="toggle" type="checkbox">
+                <label for="toggle">
+                <i class="fa-regular fa-sun"></i>
+                <i class="fa-regular fa-moon"></i>
+            </label>
+        </div>
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    </div>
+    <div id="contact">
+        <div class="column">
+            <div class="dropdown">
+                <h1 class="dropdown">
+                    Contact
+                </h1>
+                <button class="dropdown dropdown-btn hire-btn">
+                    me <i class="fa-solid fa-sort-down"></i>
+                </button>
+                <ul class="dropdown-content">
+                    <li>
+                        <a href=mailto:"smr.artm@gmail.com">
+                            <button class="hire-btn dropdown-btn small">
+                                Open in email client
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <button class="hire-btn dropdown-btn small copying">Copy to clipboard</button>
+                    </li>
+                </ul> 
+            </div>
+            <h3>
+                I'm always open to conversation. If you have any questions,
+                proposals or just want to discuss programming feel free to reach out.
+            </h3>
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Name (required)" required>
+                <input type="email" name="Email" placeholder="E-mail (required)" required>
+                <input type="text" name="Company" placeholder="Company">
+                <textarea name="Message" maxlength="550" placeholder="Message"></textarea>
+                <button type="submit" class="hire-btn submit-btn">Submit</button>
+                <p id="message-notif"></p>
+            </form>
+        </div>
+    </div>
+    <div id="copyright">
+        <p>Artyom Smirnov &copy 2023</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

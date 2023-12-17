@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: white;
+    min-height: 100vh;
+    transition: .4s;
+    font-family: 'Encode Sans', sans-serif;
+}
+
+body[data-theme="dark"] {
+    background-color: #032b43;
+    color: white;
+}
+
+#header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1420px;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.logo {
+    padding-left: 50px;
+}
+
+.logo a img {
+    width: 200px;
+}
+
+.div-nav a {
+    display: inline-block; /*If you want to transform: scale(*number*); the links, you need to display it like that */
+    padding-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: 0.1s;
+}
+
+[data-theme="dark"] .div-nav a {
+    color: white;
+}
+
+.div-nav a:hover {
+    transform: scale(1.1);
+    color: #6666FF;
+}
+
+#toggle {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    background-color: #6666FF;
+    border-radius: 14px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 32px;
+}
+
+label::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: rgb(255,255,255);
+    background: linear-gradient(155deg, rgba(255,255,255,1) 23%, rgba(167,167,167,1) 75%);
+    border-radius: 50%;
+    transition: transform 0.2s;
+    z-index: 3;
+}
+
+.fa-sun {
+    position: relative;
+    top: 2px;
+    left: 5px;
+    color: rgb(71, 71, 71);
+}
+
+.fa-moon {
+    position: relative;
+    top: 2px;
+    left: 11px;
+}
+
+#toggle:checked + label {
+    background-color: #0496c7;
+}
+
+#toggle:checked + label::before {
+    transform: translateX(25px);
+}
+
+.hire-btn {
+    position: relative;
+    display: inline-block;
+    padding: 11px 30px;
+    margin: 50px 0;
+    background-color: transparent;
+    color: #000000;
+    font-weight: bolder;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+    border:.5px solid #000000;
+    cursor: pointer;
+}
+
+[data-theme="dark"] .hire-btn {
+    color: white;
+    border:.5px solid #ffffff;
+}
+
+.hire-btn:hover{
+    background: #6666FF;
+    color: #050801;
+    box-shadow: 0 0 5px #6666FF,
+                0 0 25px #6666FF,
+                0 0 50px #6666FF,
+                0 0 200px #6666FF;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+
+.hire-btn span{
+    position: absolute;
+    display: block;
+}
+.hire-btn span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,transparent,#6666FF);
+    animation: animate1 2s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+.hire-btn span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#6666FF);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+.hire-btn span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#6666FF);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+.hire-btn span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#6666FF);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+
+/*----------------------------------------Contact-----------------------------------------*/
+
+#contact {
+    padding: 0 0;
+}
+
+.column, .column form {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column h3 {
+    margin: 10px;
+    width: 40%;
+    text-align: justify;
+}
+
+/* dropdown button START */
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.dropdown-btn {
+    position: relative;
+    margin: 0 0 -2px 6px;
+    padding: 4px 10px;
+    background-color: transparent;
+    font-size: 1.5em;
+}
+
+.fa-sort-down {
+    vertical-align: top;
+}
+
+.dropdown-content {
+    display: none;
+    left: 125px;
+    width: 134px;
+    height: 84px;
+    position: absolute;
+    background: rgb(148,148,255);
+    background: linear-gradient(170deg, rgba(148,148,255,1) 28%, rgba(177,94,255,1) 83%);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.dropdown-content li {
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0px 4px;
+}
+
+.small {
+    margin: 0;
+    font-size: 10px;
+}
+
+/* dropdown button END */
+
+form input, textarea {
+    font-size: 1.25rem;
+    background: none;
+    border: 1px solid #6666FF;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 10px;
+    height: 70px;
+    width: 800px;
+    resize: none;
+}
+
+form textarea {
+    height: 120px;
+}
+
+.submit-btn {
+    margin: 10px;
+    background-color: transparent;
+}
+
+#message-notif {
+    font-size: 19px;
+    color: greenyellow;
+}
+
+#copyright {
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#copyright p {
+    text-align: center;
+}
+
+.popup-copy {
+    display: block;
+    position: absolute;
+    background-color: greenyellow;
+    z-index: 100;
+}
+
+/*---------------------------------------MOBILE VERSION--------------------------------------------*/
+
+#header .fa-bars,
+#header .fa-x {
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    
+    .hire-btn {
+        padding: 8%;
+        margin-top: 10%;
+    }
+
+    .hire-btn span:nth-child(1) {
+        height: 100%;
+    }
+
+    .div-nav {
+        display: flex;
+        flex-direction: column;
+        background: rgb(148,148,255);
+        background: linear-gradient(170deg, rgba(148,148,255,1) 28%, rgba(177,94,255,1) 83%);
+        position: fixed;
+        top: 0;
+        right: -203px;
+        width: 200px;
+        height: 100%;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.3s;
+    }
+
+    #header .fa-x {
+        display: block;
+        position: absolute;
+        margin-bottom: 7%;
+        top: 30px;
+        left: 8%;
+        font-size: 25px;
+    }
+
+    #header .fa-bars {
+        display: block;
+        position: absolute;
+        left: 85%;
+        font-size: 35px;
+    }
+
+    .div-nav a {
+        margin: 10% 8%;
+    }
+
+    label {
+        margin-left: 14px;
+    }
+
+    /*----------------------------------------Contact-----------------------------------------*/
+
+    .column {
+        margin-top: 10%;
+    }
+    
+    form input, textarea {
+        width: 100%;
+    }
+
+    .column h3 {
+        width: 85%;
+    }
+
+    .submit-btn {
+        padding: 7%;
+        margin-top: 7%;
+    }
+
+    /* dropdown button START */
+
+    .dropdown-btn {
+        position: relative;
+        margin: 0 0 -2px 6px;
+        padding: 4px 10px;
+        background-color: transparent;
+        font-size: 1.5em;
+    }
+
+    .small {
+        margin: 0;
+        font-size: 10px;
+    }
+
+    /* dropdown button END */
+}
